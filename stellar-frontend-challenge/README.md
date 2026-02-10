@@ -74,8 +74,17 @@ To actually send payments you’ll need some testnet XLM in your wallet. Use any
 
 ## Screenshots / images
 
-_(Reserved space for UI screenshots – intentionally left empty for now.)_
+1 <img width="1800" height="837" alt="image" src="https://github.com/user-attachments/assets/b24e85f0-6eb6-45ea-9388-f0d3ae073731" />
 
+2 <img width="574" height="285" alt="image" src="https://github.com/user-attachments/assets/9bea3494-0ddb-4b31-9995-9f8e42fec7f3" />
+
+3 <img width="1916" height="893" alt="image" src="https://github.com/user-attachments/assets/c1f02fd9-9167-442e-b60b-68c2a7624c6b" />
+
+4 <img width="1777" height="878" alt="image" src="https://github.com/user-attachments/assets/52b6be64-a381-47ed-a283-354a82596c85" />
+
+5 <img width="1903" height="869" alt="image" src="https://github.com/user-attachments/assets/f41c4d86-467b-4a7e-863e-ae89e58ee99d" />
+
+exlorer url https://stellar.expert/explorer/testnet/tx/7e8017fd2c0bf6202cd5a3a7acd057aadfd8ddbc02909ad1efe5dd6ff252499e
 ## Notes
 
 - **Testnet only** – never use real funds here.  
