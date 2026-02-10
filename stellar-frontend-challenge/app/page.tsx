@@ -354,20 +354,6 @@ export default function Home() {
           </section>
         )}
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-slate-800 mt-16 bg-slate-950">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="text-center text-slate-500 text-xs">
-            <p className="mb-1">
-              Built for making it right with Stellar SDK on Testnet.
-            </p>
-            <p>
-              ⚠️ Testnet only &mdash; please don&apos;t use real funds.
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

@@ -1,101 +1,82 @@
-# Thankful - Stellar Testnet Payment App
+# Make It Right – Stellar Testnet Apology App
 
-A modern web application for sending thank-you messages with XLM payments on Stellar testnet. Built with Next.js, TypeScript, and Tailwind CSS.
+A tiny Stellar testnet experience where you send on‑chain “apology” payments with a short note attached. Built with Next.js, TypeScript, and Tailwind CSS.
 
-## Project Description
+## What this app does
 
-Thankful enables users to connect their Freighter wallet, view XLM balance, send payments with personalized messages, and track transaction history on Stellar testnet. Features a clean hero-style layout with dark-outlined UI components.
+This project lets you:
 
-## Features
+- Connect a Stellar wallet and see your XLM testnet balance in the navbar
+- Send a small XLM transfer with an optional apology message (text memo)
+- View a clean, card‑based history of recent transactions
+- Get clear feedback when things succeed or fail (toasts + inline alerts)
 
-✅ **Wallet Setup**: Freighter wallet integration with Stellar Testnet  
-✅ **Wallet Connection**: Connect/disconnect functionality with error handling  
-✅ **Balance Handling**: Real-time XLM balance display with auto-refresh  
-✅ **Transaction Flow**: Send XLM payments with success/failure feedback and transaction hash  
-✅ **Development Standards**: Modern UI, wallet integration, error handling
+All blockchain logic lives in `lib/stellar-helper.ts` (intentionally left untouched for the challenge).
 
-## Setup Instructions
+## Main features
+
+- **Wallet connection**: Connect / disconnect with loading states and basic error handling  
+- **Balance display**: Navbar balance pill with auto‑refresh after successful sends  
+- **Send flow**:
+  - Recipient address validation (must be a 56‑character G‑address)
+  - Amount validation with helpful error copy
+  - Optional memo limited to 28 characters (Stellar text memo constraint)
+  - Success card with transaction hash + link out to a block explorer
+- **Transaction history**:
+  - Sent vs received, amounts, asset, relative time, and truncated hashes
+  - Quick link to view each transaction on an explorer
+- **Responsive layout & dark styling**:
+  - Split hero layout on desktop (copy left, panel right)
+  - Tabbed panel for “Send apology” / “Check history” when connected
+  - Dark, minimal navbar with wallet + balance controls
+
+## Getting started
 
 ### Prerequisites
-- Node.js 18+
-- Freighter Wallet Extension ([Install](https://freighter.app))
-- npm or yarn
 
-### Installation
+- Node.js 18+
+- npm (or pnpm/yarn if you prefer)
+
+### Install & run
 
 ```bash
-# Clone repository
-git clone <your-repo-url>
+# From the repository root
 cd stellar-frontend-challenge
 
-# Install dependencies
 npm install
-
-# Run development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Then open `http://localhost:3000` in your browser.
 
-### Getting Testnet XLM
+## Testnet XLM
 
-1. Connect your Freighter wallet
-2. Copy wallet address from navbar
-3. Visit [Stellar Laboratory Account Creator](https://laboratory.stellar.org/#account-creator?network=test)
-4. Paste address and click "Fund"
-5. Refresh app to see balance
+To actually send payments you’ll need some testnet XLM in your wallet. Use any Stellar testnet faucet / account‑creator you like, fund your address, and then refresh the app to see the updated balance in the navbar.
 
-## Usage
+## How to use the UI
 
-**Connect Wallet**: Click "Connect wallet" in navbar → Approve in Freighter
+- **Connect your wallet**: Use the button in the top‑right navbar, then approve in your wallet extension.  
+- **Send an apology**:
+  - Switch to the **Send apology** tab (when connected)
+  - Paste the recipient’s Stellar address
+  - Enter an amount in XLM
+  - Add an optional short apology message (≤ 28 characters)
+  - Submit and approve the transaction in your wallet
+- **Check history**:
+  - Switch to the **Check history** tab to see your most recent on‑chain activity
 
-**Send Payment**: 
-- Go to "Send transaction" tab
-- Enter recipient address (56 chars, starts with 'G')
-- Enter amount in XLM
-- Add message (optional, max 28 chars)
-- Click "Send Payment" → Approve in wallet
+## Tech stack
 
-**View History**: Click "Check history" tab to see recent transactions
+- Next.js + React (`app` router)
+- TypeScript
+- Tailwind CSS
+- Stellar SDK (via the provided helper in `lib/stellar-helper.ts`)
 
-## Technology Stack
+## Screenshots / images
 
-- Next.js 14.2.0 | TypeScript 5.4.5 | Tailwind CSS 3.4.4
-- Stellar SDK 12.3.0 | Stellar Wallets Kit 1.9.5
+_(Reserved space for UI screenshots – intentionally left empty for now.)_
 
-## Screenshots
+## Notes
 
-### Wallet Connected State UI:
-
-<img width="1911" height="905" alt="image" src="https://github.com/user-attachments/assets/3f926b52-3f4f-4bf8-b1fd-bb1aa061feea" />
-
-### Balance Displayed:
-
-<img width="1911" height="905" alt="image" src="https://github.com/user-attachments/assets/739e9276-af01-4b5f-b9a4-5aafb0b9b13b" />
-
-### Successful Testnet Transaction:
-
-<img width="1916" height="908" alt="image" src="https://github.com/user-attachments/assets/701ccb15-6b1c-4c10-af82-f4a399ef6bdf" />
-
-### Transaction Result Shown to User:
-
-<img width="1919" height="969" alt="image" src="https://github.com/user-attachments/assets/61a1f362-2fa5-48a5-8301-f2f720bdc40f" />
-
-https://stellar.expert/explorer/testnet/tx/c7d604c6ce8d7644ff1f67adac29c8a9f5e2113c7e6a124a01c6826500212fb9
-
-## Error Handling
-
-<img width="832" height="632" alt="image" src="https://github.com/user-attachments/assets/dace26f0-5b08-4845-9058-3d4b31b87931" />
-
-## Important Notes
-
-⚠️ **Stellar Testnet only - Do not use real funds**
-
-## Resources
-
-- [Stellar Docs](https://developers.stellar.org/) | [Stellar Laboratory](https://laboratory.stellar.org/)
-- [Freighter Wallet](https://freighter.app) | [Stellar Expert](https://stellar.expert/explorer/testnet)
-
----
-
-Built with ❤️ for the Stellar Community
+- **Testnet only** – never use real funds here.  
+- The focus of this repo is front‑end UX on top of the provided Stellar helper; the blockchain logic itself is already wired up for you.
