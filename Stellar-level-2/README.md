@@ -79,12 +79,6 @@ Create `frontend/.env.local` (or let the deploy script create it):
 
 ---
 
-## Full change log and details
-
-See **[overview.md](./overview.md)** for what changed from CareFund, exact commands, env, wallet setup, and troubleshooting.
-
----
-
 ## Structure
 
 - `smart-contract/` – Soroban (Rust) contract: create page, donate, withdraw, events
@@ -92,3 +86,25 @@ See **[overview.md](./overview.md)** for what changed from CareFund, exact comma
 - `deploy_contract.ps1` – Build, deploy, init, generate TypeScript bindings
 
 Made for the Stellar Developer Challenge.
+
+
+screenshots:
+main page:
+<img width="1919" height="879" alt="image" src="https://github.com/user-attachments/assets/4abd5bc4-443c-47d7-b07b-bc77a7155d97" />
+
+connected wallet:
+<img width="1881" height="903" alt="image" src="https://github.com/user-attachments/assets/1e927c86-cab3-4bf5-8810-5865dee20739" />
+
+
+Creating camppaign
+<img width="1898" height="902" alt="image" src="https://github.com/user-attachments/assets/66674a26-ceb8-4913-9731-10f5f75e1666" />
+
+
+created campaign list
+<img width="1892" height="907" alt="image" src="https://github.com/user-attachments/assets/1d8b99ab-9146-4171-89fb-1de5fa27fa8d" />
+
+
+sending xlm on that campaign
+<img width="1915" height="914" alt="image" src="https://github.com/user-attachments/assets/66694c09-4bac-402a-b17a-0dda7a077469" />
+
+
